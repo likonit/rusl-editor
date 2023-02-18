@@ -1,0 +1,113 @@
+section {
+    margin-top: 5vh;
+}
+
+section .block {
+    padding: 3vw;
+}
+
+section .block h2 {
+    color: #E6DBDB;
+    padding: 2vh 0;
+    font-size: 30px;
+}
+
+section .block button {
+    display: block;
+    background: #0E639C;
+    color: #e1e1e1;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 4px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#create-new-project input {
+    background: none;
+    padding: 5px 10px;
+    border: 0;
+    border-bottom: 1px solid #D7BA6E;
+    outline: none;
+	outline-offset: none;
+	box-shadow: none;
+    color: white;
+    margin-bottom: 2vh;
+    font-size: 15px;
+    display: block;
+}
+
+#open-project #list .list-elm {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #e1e1e1;
+    transition: .25s;
+    cursor: pointer;
+    padding: 3px 5px;
+    background: #202328;
+    border-radius: 5px;
+    list-style: armenian;
+}
+
+#open-project #list .list-elm:hover {
+    color: white;
+    background: #262A30;
+    transition: .25s;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.hotkey-description {
+    margin: 4vh 3vw;
+    color: #e1e1e1;
+    font-size: 16px;
+}
+
+.hotkey-description p {
+    margin: 1vh 0;
+}
+
+.hotkey-description span {
+    background: #212429;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+#update h2 {
+    color: white;
+}
+
+#update div {
+    padding: 2vh 3vw;
+}
+
+#update #download {
+    display: none;
+}
+
+#update .custom-button {
+    margin: 2vh 0;
+}
+
+#update .custom-button a {
+    padding: 2px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+#to-download {
+    background: #1D94CF;
+    display: none;
+}
+
+#to-update {
+    background: #19B45A;
+    display: none;
+}

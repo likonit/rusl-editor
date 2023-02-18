@@ -1,0 +1,11 @@
+{
+    "main": "./src/index.html",
+    "name": "Редактор кода RuSL",
+    "window": {
+    	"icon": "src/images/logo.png"
+    },
+    "dependencies": {
+        "open": "^8.4.0",
+        "tar": "^6.1.13"
+    }
+}

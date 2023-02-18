@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/codemirror.css">
+    <link rel="stylesheet" href="../css/editor.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/jqueru-ui.css"/>
+    <title>Редактор кода RuSL</title>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <nav>
+
+            <ul>
+                <li>
+                    <a href="../index.html">Проекты</a>
+                </li>
+                <li>
+                    <a href="../pages/hotkeys.html">Настройки</a>
+                </li>
+                <li class="mini-menu-activate">
+                    <a>Проект</a>
+                    <ul class="mini-menu">
+                        <div>
+                            <li>
+                                <a id="project-run">Запустить</a>
+                            </li>
+                            <li>
+                                <a id="project-reload">Обновить</a>
+                            </li>
+                            <li>
+                                <a id="project-path">Путь</a>
+                            </li>
+                            <li>
+                                <a id="open-project">Открыть</a>
+                            </li>
+                            <li>
+                                <a id="project-delete">Удалить</a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <section id="workspace">
+
+        <div id="files">
+
+            <div id="name"></div>
+            
+            <div id="menu">
+                <p id="newfile">
+                    + Новый файл
+                </p>
+                <p id="newfolder">
+                    + Новая папка
+                </p>
+            </div>
+            
+            <div id="list"></div>
+
+        </div>
+
+        <div id="workspace-editor">
+
+            <div id="statusbar">
+
+                <nav id="list"></nav>
+
+            </div>
+
+            <textarea id="rusl-code" style="opacity: 0;"></textarea>
+    
+        </div>
+
+    </section>
+
+    <div id="status-loading"></div>
+
+    <div id="dialog-msg">
+
+        <div id="content">
+
+            <p id="close">
+                <span>×</span>
+            </p>
+            <h2></h2>
+            <div id="contain"></div>
+        
+        </div>
+
+    </div>
+
+    <div id="grey-all"></div>
+
+    <script type="text/javascript" src="./../../libs/jquery-3.3.1.min.js"></script>
+    <script src="../../libs/jquery-ui.js"></script>
+    <script type="text/javascript" src="./../../libs/codemirror.js"></script>
+    <script type="module" src="./../js/editor.js"></script>
+
+</body>
+</html>

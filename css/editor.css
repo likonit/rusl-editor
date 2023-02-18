@@ -1,0 +1,311 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+#workspace {
+    margin-top: 4vh;
+    height: 96vh;
+}
+
+header nav {
+    user-select: none;
+}
+
+.CodeMirror {
+    height: 100%;
+    max-height: 91vh;
+    background: #1A1C20;
+    font-size: 21px;
+    color: #e1e1e1;
+    width: auto;
+    opacity: 0;
+}
+
+.CodeMirror-gutters {
+    background: #131519;
+    border-right: none;
+}
+
+.CodeMirror pre {
+    color: #E1E1E1;
+}
+
+.cm-operators {
+    color: #9DE88F;
+}
+
+.cm-keywords {
+    color: #FC7563;
+}
+
+.cm-scobs {
+    color: #F3B852;
+}
+
+.cm-string2 {
+    color: #68BD91;
+}
+
+.cm-comment2 {
+    color: #939CAE;
+}
+
+.cm-numbers {
+    color: #B5CEA8;
+}
+
+.cm-spec {
+    color: #FFD710;
+}
+
+.CodeMirror-cursor {
+    border-left: 2px solid #e1e1e1;
+}
+
+#workspace {
+    display: grid;
+    grid-template-columns: 1fr 99fr;
+}
+
+#workspace-editor #statusbar {
+    width: 100%;
+    height: 5vh;
+    background: #252526;
+}
+
+#workspace #files {
+    min-width: 10vw;
+    width: 13vw;
+    max-width: 60vw;
+    background: #202329;
+    height: 96vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#workspace #files #menu {
+    display: inline-block;
+}
+
+#workspace #files #menu p {
+    font-size: 13px; 
+    padding: 2px;
+    color: #CCCCC1;
+    cursor: pointer;
+}
+
+#workspace #files #menu p:hover {
+    color: #e1e1e1;
+}
+
+.CodeMirror-linenumber {
+    color: #2B91AF;
+    text-align: center;
+}
+
+#files #name {
+    font-weight: bold;
+    color: #ccc;
+    text-align: center;
+    padding: 2px 0;
+}
+
+.file-elm {
+    padding: 2px 0;
+    font-size: 14px;
+    color: #CCCCC1;
+}
+
+.file-name {
+    padding-left: 4px;
+}
+
+.file-info:hover, .file-info.inwork {
+    background: #262A31;
+}
+
+.file-info {
+    cursor: pointer;
+    user-select: none;
+}
+
+.file-info a {
+    white-space: nowrap;
+}
+
+.dir-status {
+    width: 10px;
+    padding: 1px;
+}
+
+.no-arrow {
+    padding-left: 16px;
+}
+
+#statusbar #list {
+    display: flex;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#statusbar #list::-webkit-scrollbar {
+    height: 4px;
+    background-color: #313132;
+    cursor: move;
+}
+
+#statusbar #list::-webkit-scrollbar-thumb {
+    height: 6px;
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: #666;
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+.status-elm {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 20px;
+    border-right: 1px solid #2D2D2D;
+    font-size: 13px;
+    cursor: pointer;
+    color: #969685;
+    flex: 0 0 auto;
+    user-select: none;
+}
+
+.status-elm.inwork {
+    color: #e1e1e1;
+}
+
+.status-elm:hover {
+    background: #2B2B2B;
+}
+
+.status-elm span {
+    margin-left: 3px;
+    font-size: 17px;
+    border-radius: 5px;
+    width: 20px;
+    height: 25px;
+    display: grid;
+    text-align: center;
+    align-items: start;
+}
+
+.status-elm span:hover {
+    background: #444;
+}
+
+#dialog-msg {
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#dialog-msg #content {
+    width: 60vh;
+    height: 60vh;
+    background: #202020;
+    padding: 1vw;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #202020;
+}
+
+#dialog-msg #content h2 {
+    text-align: center;
+    color: white;
+    margin: 2vw 0;
+}
+
+#dialog-msg #content #close {
+    text-align: end;
+}
+
+#dialog-msg #content #close span {
+    padding: 0.5vw;
+    cursor: pointer;
+    color: #e1e1e1;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#grey-all {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999998;
+    background: #555;
+    opacity: 0.4;
+    display: none;
+}
+
+#contain #filename-input {
+    background: none;
+    padding: 0 10px;
+    border: 0;
+    border-bottom: 1px solid #D7BA6E;
+    outline: none;
+    outline-offset: none;
+    box-shadow: none;
+    color: white;
+    margin: 1vh 2vw;
+    font-size: 15px;
+    display: block;
+}
+
+#contain #description {
+    padding: 2.5vh 2vw;
+    color: #e3e3e3;
+    font-size: 12.5px;
+}
+
+#contain #create {
+    margin: 1vh 2vw;
+}
+
+#contain button {
+    padding: 2px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0;
+    border: 0;
+}
+
+#contain button {
+    background: #1D94CF;
+}
+
+@media all and (max-width: 1640px) {
+
+    .CodeMirror {
+        font-size: 16px;
+    }
+
+}
+
+@media all and (max-width: 840px) {
+
+    .CodeMirror {
+        font-size: 14px;
+    }
+
+}
