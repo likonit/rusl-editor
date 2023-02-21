@@ -1,14 +1,14 @@
 $(() => {
 
-    const fs = require("fs"), win = nw.Window.get(), tar = require("tar")
+    const fs = require("fs"), win = nw.Window.get()
     var data = JSON.parse(fs.readFileSync("./data/.status.json", "utf-8"))
 
-    // tar.c( // создание обновления
-    //     {
-    //         gzip: true
-    //     },
-    //     ['./node_modules']
-    // ).pipe(fs.createWriteStream('rusl-editor-module.tgz'))
+    // проверка наличия папки с проектами
+    fs.readdir("./data/projects", err => {
+
+        if (err) fs.mkdirSync("./data/projects")
+
+    })
 
     $("#to-create-project").click(() => {
 

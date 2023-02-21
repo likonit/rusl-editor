@@ -18,7 +18,7 @@ $(() => {
 
     var win = nw.Window.get()
         
-    // сочетание клаивш, сохранение
+    // сочетание клаивш, сохранение (неактуально, так как блочит сохранение в других программах)
     // try {
 
     //     var shortcut = new nw.Shortcut({
@@ -61,8 +61,17 @@ $(() => {
 
     win.on('close', function () {
 
-        // nw.App.unregisterGlobalHotKey(shortcut)
-        this.close(true)
+        // проверка сохранённых файлов
+
+        var isEdit = status.files.find(item => item.inChange)
+
+        if (!isEdit) this.close(true)
+        else {
+
+            var need = confirm("Есть несохранённые файлы. Всё равно закрыть?")
+            if (need) this.close(true)
+
+        }
 
     })
     
@@ -213,6 +222,30 @@ $(() => {
     CodeMirror.keyMap.pcDefault["Shift-'"] = () => {
 
         replaceText('"')
+
+    }
+
+    CodeMirror.keyMap.pcDefault["Shift-["] = () => {
+
+        replaceText('{')
+
+    }
+
+    CodeMirror.keyMap.pcDefault["Shift-]"] = () => {
+
+        replaceText('}')
+
+    }
+
+    CodeMirror.keyMap.pcDefault["Ctrl-["] = () => {
+
+        replaceText('[')
+
+    }
+
+    CodeMirror.keyMap.pcDefault["Ctrl-]"] = () => {
+
+        replaceText(']')
 
     }
 
@@ -760,7 +793,7 @@ $(() => {
 
     $("#project-reload").click(() => {
 
-        location.reload()
+        window.location.reload()
  
     })
 

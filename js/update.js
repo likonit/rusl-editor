@@ -2,8 +2,11 @@ $(() => {
 
     const fs = require("fs"), https = require("https"), tar = require("tar")
     var data = JSON.parse(fs.readFileSync("./data/.status.json")), dt = []
-    console.log(data)
     $("#current-version").text(data.version)
+
+    var win = nw.Window.get()
+
+    var t = {}
 
     var req = https.get('https://russlang.ru/scripts/data.json', res => {
 
@@ -20,9 +23,10 @@ $(() => {
 
             }
 
-            let t = JSON.parse(Buffer.concat(dt).toString('utf8'))
+            t = JSON.parse(Buffer.concat(dt).toString('utf8'))
             $("#update #download").fadeIn(0)
             $("#update #download h2").text("Актуальная версия: " + t.editor_vesion)
+            $("#update #download #descr").text(t.editor_descr)
 
             if (t.editor_vesion != data.version) {
 
@@ -41,6 +45,7 @@ $(() => {
 
                             if (res.statusCode == 404) {
 
+                                alert("Ошибка!")
                                 console.log(res)
                                 return
 
@@ -61,7 +66,11 @@ $(() => {
                                     })
                                 )
 
+                                let dt = JSON.parse(fs.readFileSync("./data/.status.json", "utf-8"))
+                                dt.version = t.editor_vesion
+                                fs.writeFileSync("./data/.status.json", JSON.stringify(dt))
                                 $("#status-loading").fadeOut(100)
+                                alert("Перезапустите приложение.")
 
                             })
 
